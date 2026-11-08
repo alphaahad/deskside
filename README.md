@@ -2,7 +2,7 @@
 
 **Talk to your AI accounts-payable employee like a coworker: ask why something is on hold, and approve or reject it right there.**
 
-**Live demo:** _URL added after the first deploy_ · **Decisions:** [DECISIONS.md](DECISIONS.md) · **Pitch:** [PITCH.md](PITCH.md) · **Video script:** [VIDEO_SCRIPT.md](VIDEO_SCRIPT.md)
+**Live demo:** https://onyourdeskside.vercel.app · **Decisions:** [DECISIONS.md](DECISIONS.md) · **Pitch:** [PITCH.md](PITCH.md) · **Video script:** [VIDEO_SCRIPT.md](VIDEO_SCRIPT.md)
 
 > **All data is mock data.** Vendors, invoices, purchase orders, goods receipts, paid bills and the "before" baseline are synthetic. There is no real ERP connection, and Deskside is not a Zamp product or integration. It's a prototype of a layer that would sit on top of one.
 
@@ -74,7 +74,7 @@ DATABASE_URL=postgres://...         # Neon or any Postgres
 ```bash
 npm test             # 44 unit tests: match engine, rules, trust model, metrics, intent router, Gemini snapshot accuracy
 npm run e2e          # the video's exact flow + MCP, in real Chrome, offline mode, fresh in-memory DB
-E2E_BASE_URL=https://<deployed-url> npm run e2e   # same tests against the deployment
+E2E_BASE_URL=https://onyourdeskside.vercel.app npm run e2e   # same tests against the live site
 npm run pdfs         # regenerate the mock invoice PDFs (deterministic bytes)
 npm run cache:export # snapshot live Gemini reads from the local DB (stop the dev server first)
 ```
