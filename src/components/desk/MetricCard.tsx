@@ -12,7 +12,10 @@ export function MetricsBody({ m }: { m: MetricsSummary }) {
     <div>
       <p className="text-xs font-medium uppercase tracking-wide text-muted">Hold → human decision · median</p>
       <div className="mt-1 flex items-baseline gap-3">
-        <span className="text-3xl font-semibold tabular-nums" data-testid="metric-median">{m.medianMs == null ? "–" : duration(m.medianMs)}</span>
+        <span key={m.medianMs == null ? "empty" : "value"} data-testid="metric-median"
+          className={`animate-swap tabular-nums ${m.medianMs == null ? "text-lg font-medium text-muted" : "text-3xl font-semibold tracking-[-0.02em]"}`}>
+          {m.medianMs == null ? "No decisions yet" : duration(m.medianMs)}
+        </span>
         <span className="text-sm text-muted">
           {m.decided} decided · {m.stillHeld} waiting
         </span>

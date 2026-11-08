@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 import type { Citation, Extraction, MatchResult, PaidBill, PurchaseOrder, Receipt, Vendor } from "@/lib/types";
 import { inr } from "@/lib/format";
@@ -16,19 +16,50 @@ type Doc = {
   paidBill: PaidBill | null;
 };
 
-/** Side sheet: the invoice PDF next to the PO and goods receipt it was matched against, cited lines highlighted. */
-export function DocDrawer({ target, onClose }: { target: { invoiceId: string; cite?: Citation } | null; onClose: () => void }) {
+/**
+ * Side sheet: the invoice PDF next to the PO and goods receipt it was matched against, cited lines highlighted.
+ * It slides in from the right and leaves the same way (a CSS transition, so a quick close mid-entry reverses
+ * from where it is). The scrim dims because reading documents is a focused task. Focus moves in on open,
+ * is trapped while open, and returns to whatever opened it.
+ */
+export function DocDrawer({ target, open, onClose, onExited }: {
+  target: { invoiceId: string; cite?: Citation } | null; open: boolean; onClose: () => void; onExited: () => void;
+}) {
   const [doc, setDoc] = useState<Doc | null>(null);
   const id = target?.invoiceId;
+  const panel = useRef<HTMLDivElement>(null);
+  const closeBtn = useRef<HTMLButtonElement>(null);
+  const returnTo = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!id) return;
     let alive = true;
     fetch(`/api/doc/${id}`, { cache: "no-store" }).then((r) => r.json()).then((d) => alive && setDoc(d));
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    return () => { alive = false; };
+  }, [id]);
+
+  useEffect(() => {
+    if (!open) return;
+    returnTo.current = document.activeElement as HTMLElement | null;
+    closeBtn.current?.focus({ preventScroll: true });
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { e.preventDefault(); onClose(); return; }
+      if (e.key !== "Tab" || !panel.current) return;
+      const f = panel.current.querySelectorAll<HTMLElement>('button, a[href], iframe, [tabindex]:not([tabindex="-1"])');
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
     window.addEventListener("keydown", onKey);
-    return () => { alive = false; window.removeEventListener("keydown", onKey); };
-  }, [id, onClose]);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+      returnTo.current?.focus?.({ preventScroll: true });
+    };
+  }, [open, onClose]);
 
   if (!target) return null;
   const ready = doc && doc.invoiceId === target.invoiceId ? doc : null;
@@ -42,14 +73,17 @@ export function DocDrawer({ target, onClose }: { target: { invoiceId: string; ci
 
   return (
     <div className="fixed inset-0 z-40 flex justify-end" role="dialog" aria-modal="true" aria-label={`Documents for ${target.invoiceId}`}>
-      <button type="button" aria-label="Close" onClick={onClose} className="absolute inset-0 bg-ink/20" />
-      <div className="animate-enter relative flex h-full w-[min(1100px,96vw)] flex-col bg-canvas shadow-2xl">
+      <button type="button" aria-label="Close documents" tabIndex={-1} onClick={onClose}
+        className={`scrim absolute inset-0 bg-ink/25 ${open ? "opacity-100" : "opacity-0"}`} />
+      <div ref={panel} data-open={open}
+        onTransitionEnd={(e) => { if (e.target === e.currentTarget && (e.propertyName === "transform" || e.propertyName === "opacity") && !open) onExited(); }}
+        className="sheet relative flex h-full w-[min(1100px,96vw)] flex-col bg-canvas shadow-[-24px_0_48px_-12px_rgb(17_24_39/0.25)]">
         <div className="flex items-center gap-3 border-b border-line bg-surface px-5 py-3">
           <div>
             <p className="text-sm font-semibold">{target.invoiceId}{ready ? ` · ${ready.vendor.name}` : ""}</p>
             <p className="text-xs text-muted">Invoice as received, and the PO and receipt Meera matched it against. Highlighted: the cited lines. Mock data.</p>
           </div>
-          <button type="button" onClick={onClose} className="pressable ml-auto rounded-md p-1.5 text-muted hover:bg-canvas hover:text-ink" aria-label="Close documents">
+          <button ref={closeBtn} type="button" onClick={onClose} className="pressable ml-auto rounded-md p-1.5 text-muted hover:bg-canvas hover:text-ink" aria-label="Close documents">
             <X className="size-5" />
           </button>
         </div>

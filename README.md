@@ -1,12 +1,12 @@
-# Deskside
+# Nod
 
 **Talk to your AI accounts-payable employee like a coworker: ask why something is on hold, and approve or reject it right there.**
 
 **Live demo:** https://onyourdeskside.vercel.app · **Decisions:** [DECISIONS.md](DECISIONS.md) · **Pitch:** [PITCH.md](PITCH.md) · **Video script:** [VIDEO_SCRIPT.md](VIDEO_SCRIPT.md)
 
-> **All data is mock data.** Vendors, invoices, purchase orders, goods receipts, paid bills and the "before" baseline are synthetic. There is no real ERP connection, and Deskside is not a Zamp product or integration. It's a prototype of a layer that would sit on top of one.
+> **All data is mock data.** Vendors, invoices, purchase orders, goods receipts, paid bills and the "before" baseline are synthetic. There is no real ERP connection, and Nod is not a Zamp product or integration. It's a prototype of a layer that would sit on top of one.
 
-![Deskside: ask Meera why an invoice is held, with cited invoice, PO and receipt lines; decide in chat; every action in the live feed](docs/desk.png)
+![Nod: ask Meera why an invoice is held, with cited invoice, PO and receipt lines; decide in chat; every action in the live feed](docs/desk.png)
 
 ## Why
 AI employees already do most of accounts payable. When one holds an invoice, the finance lead has to go to another tool to find out why. **Hypothesis:** held items sit for days and trust stalls.

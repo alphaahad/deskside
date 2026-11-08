@@ -1,6 +1,6 @@
 [
  {
-  "key": "df91b5795c2d2415fed1c2f962bfabc2fe7835ce9a5beb445ee1abfa7ea6054f",
+  "key": "3852e79b9176a906c9872221be022dc64a6967ec1d595c7bb552f02d05ca59ad",
   "value": {
    "tax": 6595.2,
    "lines": [
@@ -30,7 +30,7 @@
   "created_at": "2026-11-08T14:10:43.111Z"
  },
  {
-  "key": "2f9f41dfefb3ce03612a7c6e52395f633f7b4eeb6f5582c03a23b675b835511d",
+  "key": "c48fc8cc19bff73de6fddf66ae14710ed0435daf42aaa0e360e94be0498af737",
   "value": {
    "tax": 4410,
    "lines": [
@@ -60,7 +60,7 @@
   "created_at": "2026-11-08T14:10:46.061Z"
  },
  {
-  "key": "6ad3c6f8adda04224a538feb37a0506010e2c84c82addba712f54ec19b90823a",
+  "key": "a209e9170fbb325e67310e1587a8886511b2283b59f3be532b222dcc86d22cc7",
   "value": {
    "tax": 4608,
    "lines": [
@@ -83,7 +83,7 @@
   "created_at": "2026-11-08T14:10:48.790Z"
  },
  {
-  "key": "8da881be46997037a58c8448e2ed143af01cd836e868e4b9ef14159dc56b6e00",
+  "key": "8dccafb656a6cd29e89503e877a22896c72cc3bb75f72da855219e0ca78c1c77",
   "value": {
    "tax": 3159,
    "lines": [
@@ -106,7 +106,7 @@
   "created_at": "2026-11-08T14:10:51.691Z"
  },
  {
-  "key": "1dfe663198c4b8aaeda878c60e4d3d9482a7c5a352d57f32dcbec299afcf47a5",
+  "key": "aec2208804616f707c83577140879ac99867c521ca5b9b9f6549ca9fe5b238e4",
   "value": {
    "tax": 4212,
    "lines": [
@@ -129,7 +129,7 @@
   "created_at": "2026-11-08T14:10:54.919Z"
  },
  {
-  "key": "68c1048453a7ce0e479879544837576d313a0f787e86efb8d2fcda076daf6804",
+  "key": "8419d8697e1fa2f70c7726f7ea7f6e7cc744b5e97cd25d7e3c47a684c6556756",
   "value": {
    "tax": 2745,
    "lines": [
@@ -152,7 +152,7 @@
   "created_at": "2026-11-08T14:10:58.237Z"
  },
  {
-  "key": "ae532fcd4c4a5e583ab8c6fc6ca2b16be54cbf96dce7cea562b6d0d8823507d6",
+  "key": "7b5a844f5d7270270a855c37f5ff9aa4a2e9a439f29cdc629db8e9f75456fba3",
   "value": {
    "tax": 5760,
    "lines": [
@@ -175,7 +175,7 @@
   "created_at": "2026-11-08T14:12:00.108Z"
  },
  {
-  "key": "25d115fa5104e0aa0c79c4dbcf95a36b458fb63cf2927587d248e0f2bf917975",
+  "key": "06d0bdef47940f42189b95ed1bac8f10714348a4c4b31e91d33a296260a8e419",
   "value": {
    "tax": 4536,
    "lines": [
@@ -198,7 +198,7 @@
   "created_at": "2026-11-08T14:12:28.105Z"
  },
  {
-  "key": "1546ff9dad3848df9962b4f493d1ccd362d848b90e5f92bbc58040f3d4709d1e",
+  "key": "7bb954f4bdadd13f882466216ccf5cf86e1e14b8e782b2e2c1319a00a59cadf1",
   "value": {
    "tax": 4536,
    "lines": [
@@ -221,7 +221,7 @@
   "created_at": "2026-11-08T14:12:49.504Z"
  },
  {
-  "key": "7aba18d1314e91660902e662902b535a5a9fc8a8cb5a39414d2e58bc0f743ca9",
+  "key": "26403b887ca17a708594f8d561051a431e65fb8fbf19868c4e85022e131c0593",
   "value": {
    "tax": 4320,
    "lines": [
@@ -244,7 +244,7 @@
   "created_at": "2026-11-08T14:13:05.054Z"
  },
  {
-  "key": "966c6b2d0179010d05d2f0e85794f55df22748db75772749609db4a29cedac11",
+  "key": "963c166cc9f4edb17720628ea01e0a4147724e1e5cfd0c62ed89aa94fa47b04e",
   "value": {
    "tax": 8208,
    "lines": [
@@ -267,7 +267,7 @@
   "created_at": "2026-11-08T14:13:12.245Z"
  },
  {
-  "key": "5d2eaf46dc85d71c97a4b85af87a6c5a6a638a34f6f7e0dba1bf3bd23f01e727",
+  "key": "dc46432d7a49b51041e8470f65e8041aafb1e8f3478a8055bfcd99e916faca01",
   "value": {
    "tax": 9540,
    "lines": [
@@ -290,7 +290,7 @@
   "created_at": "2026-11-08T14:13:15.561Z"
  },
  {
-  "key": "f0413a3aaf2e915271248d190c2e005742d9c010e55e0e49a53722bd2a5b205c",
+  "key": "acbd0e62a6962eda64400657c33c6af4caa87ea1fdfaddc95de87e11bbb56431",
   "value": {
    "tax": 1908,
    "lines": [
@@ -313,7 +313,7 @@
   "created_at": "2026-11-08T14:13:35.167Z"
  },
  {
-  "key": "803112f7ad5a31f1723f59f75bbd640bc84049ff0b6d3b80203e903051abbaf1",
+  "key": "cb1cbe7f53c75ed11dbde2042e6d0e5edbb69d4fc85e5fdde10918508368dcf3",
   "value": {
    "tax": 5400,
    "lines": [
@@ -336,7 +336,7 @@
   "created_at": "2026-11-08T14:13:51.122Z"
  },
  {
-  "key": "7aadd82ac83472b424c76ec065bb9235e496820a8d75fa450e9a1298ab4398df",
+  "key": "ca113d203089a467eb2f201dc3aa81ebbcf70980dc4d49f4afd9780be05f3987",
   "value": {
    "tax": 9702,
    "lines": [
@@ -366,7 +366,7 @@
   "created_at": "2026-11-08T14:13:53.542Z"
  },
  {
-  "key": "fcc46addfebbab149bf58dde9d5c49c0ed1ea6fb4a929759f7b390cddefc57e3",
+  "key": "e5ea3a3592c00c7d9800aea6e936031d81342380dd5e143bb03d6fa6e25b4507",
   "value": {
    "tax": 5616,
    "lines": [
@@ -389,7 +389,7 @@
   "created_at": "2026-11-08T14:14:05.972Z"
  },
  {
-  "key": "081a520d912b99fd9ade942ac1108bc5f638a736fe3948f8ead0c5d556ca0be6",
+  "key": "053473170514df87ad0beb80cc9839edb1f66bef17b169d903aebc5a48984df6",
   "value": {
    "tax": 4392,
    "lines": [
@@ -419,7 +419,7 @@
   "created_at": "2026-11-08T14:14:21.329Z"
  },
  {
-  "key": "bc0a7dd17e64be9dc1ef65755854e4b80226e85aa7b274e19b225d884abaefa9",
+  "key": "0b2588551bca63ad8452984bbbf540e9ffb806081e0bdebb2b6d91815ca79187",
   "value": {
    "tax": 32400,
    "lines": [
@@ -442,7 +442,7 @@
   "created_at": "2026-11-08T14:14:30.908Z"
  },
  {
-  "key": "765075735ea3acad9e386e2ba3fe2101f688266bc70628d6ea73862da35e55b5",
+  "key": "5c1738075a9a3931f5c1cc83862f49651af02d6d2ba5d1e779828d37e74133d5",
   "value": {
    "tax": 2322,
    "lines": [
@@ -465,7 +465,7 @@
   "created_at": "2026-11-08T14:14:40.916Z"
  },
  {
-  "key": "0edd605b1aaf4149d89fe5ca59f99799198b2dbd10b07a06da33245afd8c6f0a",
+  "key": "1c98169c67d4928d68a17d50de31f8e71695a9498294d9e2c3b841ba37c11eae",
   "value": {
    "tax": 3456,
    "lines": [
@@ -488,7 +488,7 @@
   "created_at": "2026-11-08T14:14:52.899Z"
  },
  {
-  "key": "d29ab5eb1cf9d2ad44209358e4b12dabe1e08d01b42aef389316faaa4a9b00fa",
+  "key": "434cd166727c1779881175a7cb2d3acdddb78361232c411ca1d73746cbaabfd2",
   "value": {
    "tax": 4104,
    "lines": [
@@ -511,7 +511,7 @@
   "created_at": "2026-11-08T14:16:17.538Z"
  },
  {
-  "key": "24d64b9c75eb22be7aa88e83bd3a227141fa42d72cd831904f6c660dac4cbc3c",
+  "key": "c63d92c51997633268999f04082430c74e680ecf19e466205d44540d3f4cbf49",
   "value": {
    "tax": 15022.8,
    "lines": [
@@ -534,7 +534,7 @@
   "created_at": "2026-11-08T14:16:20.484Z"
  },
  {
-  "key": "3ed79b406b1a7cf300b246aac9634a377738bf5390eae609e6e2244078129784",
+  "key": "22fbc7eaf41e82212ebb172c00d528f402142fb05692a43cc18cc7fa7d7fdec3",
   "value": {
    "tax": 2268,
    "lines": [
@@ -557,7 +557,7 @@
   "created_at": "2026-11-08T14:16:24.292Z"
  },
  {
-  "key": "ee8948569a3ceb2bd813c59fc2b868f3a83fac4a1377435f15da4a5800ebfe14",
+  "key": "adebdf2aa66b126971062eed754299008d1e62036bbd0385a802617e83e84973",
   "value": {
    "tax": 4536,
    "lines": [
@@ -580,7 +580,7 @@
   "created_at": "2026-11-08T14:17:24.672Z"
  },
  {
-  "key": "23ec6e8c6252bc812fc605213f4efd298b58707ad26ca4c66f15064be7b06fa3",
+  "key": "9917a4ff67e3b53acbacf0fffeb4aa27a811871ff7009e1e718b4775e0856c30",
   "value": {
    "tax": 5616,
    "lines": [
@@ -603,7 +603,7 @@
   "created_at": "2026-11-08T14:17:28.607Z"
  },
  {
-  "key": "e292929b3678d27b6f2e70fe13d413098e2f5275a57910a1280bf70446f0ec32",
+  "key": "e36b1226b5771263fdfcdb75e173ee2889aea4022b5faae277feed84feaf30a2",
   "value": {
    "tax": 1987.2,
    "lines": [
@@ -626,7 +626,7 @@
   "created_at": "2026-11-08T14:17:30.822Z"
  },
  {
-  "key": "1c171d85241c904f5bca42c031f46c4d08feaf42a2ed9db4fabe880aee75657e",
+  "key": "e766d0213b469769a791042607c4ddd2c9f3eda7305312e17e02ed2a9b9eb581",
   "value": {
    "tax": 3420,
    "lines": [
@@ -649,7 +649,7 @@
   "created_at": "2026-11-08T14:17:33.711Z"
  },
  {
-  "key": "94d4d2963c4f416c581ed4749a64d32519c0b1576db2e325ed0a710f15dc0f4d",
+  "key": "35a22b3c8e95ae6f95b85398f64c74c9e8fe71a59a95efe076e811e3416a5d17",
   "value": {
    "tax": 4392,
    "lines": [
@@ -679,7 +679,7 @@
   "created_at": "2026-11-08T14:17:36.530Z"
  },
  {
-  "key": "061ad33091110a62e9273222aa147e0f10c91440e112a8249939251d043e619e",
+  "key": "7044af1a53e77a86bf98f931943333c839db4819ba67f62e58a1266cf8261dbf",
   "value": {
    "tax": 4492.8,
    "lines": [

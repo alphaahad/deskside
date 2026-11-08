@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Check } from "lucide-react";
 
 const NAV = [
   { href: "/", label: "Ask" },
@@ -14,8 +15,8 @@ export function TopBar() {
     <header className="material-bar backdrop-blur-xl backdrop-saturate-150 sticky top-0 z-30 shrink-0">
       <div className="mx-auto flex h-13 max-w-[1600px] items-center gap-6 px-5">
         <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="grid size-6 place-items-center rounded-md bg-ink text-[11px] font-bold text-white">D</span>
-          Deskside
+          <span className="grid size-6 place-items-center rounded-[7px] bg-[#0f766e] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2)]" aria-hidden><Check className="size-3.5" strokeWidth={3} /></span>
+          <span className="text-[15px] tracking-[-0.01em]">Nod</span>
         </Link>
         <nav className="flex items-center gap-1 text-sm">
           {NAV.map((n) => {

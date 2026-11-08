@@ -1,4 +1,4 @@
-# Deskside: ask your digital employee, decide where you are
+# Nod: ask your digital employee, decide where you are
 
 *A one-page pitch. Prototype by Ahad Nadeem. All product data in the demo is mock data; nothing connects to a real ERP or to Zamp.*
 
@@ -8,7 +8,7 @@ Finance leads can't see or steer their digital employees without logging into ye
 "Held items sit for days" is an assumption, not a measured fact. The demo's "before" number (a median of about 2 days) is a **mock baseline**, clearly labelled as such.
 
 ## The product
-**Deskside** sits on top of a digital-employee product and doesn't replace it. A finance lead talks to the AP employee ("Meera") like a coworker:
+**Nod** sits on top of a digital-employee product and doesn't replace it. A finance lead talks to the AP employee ("Meera") like a coworker:
 - "Why is 4471 on hold?" gets a grounded answer citing the PO, receipt and invoice lines.
 - "Approve it" or "reject it" decides right there. The action lands in a live activity feed with its source and a one-click undo.
 - "Always hold quantity variance over 5%" is remembered and applied to the next invoices.
@@ -33,4 +33,4 @@ Finance leads can't see or steer their digital employees without logging into ye
 3. **Deployment readiness:** before go-live, run a customer's sample invoices and show what would be auto-decided against what would go to review.
 
 ## Why me
-At TartanHQ I reported to the CEO and owned the HyperSync roadmap end to end: MCP, permission-aware retrieval, RBAC, sync and audit logs with rollback, and health monitoring. Deskside is the same set of problems applied to a digital employee: an agent that acts on permissioned data, has to explain itself, and has to be reversible and auditable for people to trust it.
+At TartanHQ I reported to the CEO and owned the HyperSync roadmap end to end: MCP, permission-aware retrieval, RBAC, sync and audit logs with rollback, and health monitoring. Nod is the same set of problems applied to a digital employee: an agent that acts on permissioned data, has to explain itself, and has to be reversible and auditable for people to trust it.

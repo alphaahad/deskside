@@ -121,7 +121,7 @@ function compact(c: Ctx, inv: SeedInvoice) {
 async function render(inv: SeedInvoice) {
   const doc = await PDFDocument.create();
   doc.setTitle(`MOCK invoice ${inv.number}`);
-  doc.setProducer("Deskside demo (synthetic data)");
+  doc.setProducer("Nod demo (synthetic data)");
   doc.setCreationDate(new Date("2026-11-08T00:00:00Z"));
   doc.setModificationDate(new Date("2026-11-08T00:00:00Z"));
   const page = doc.addPage([595, 842]);

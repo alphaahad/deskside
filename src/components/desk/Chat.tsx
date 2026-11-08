@@ -21,12 +21,44 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
   onSend: (t: string) => void; onUndo: (id: number) => void; open: OpenDoc;
 }) {
   const [draft, setDraft] = useState("");
+  const [unseen, setUnseen] = useState(false);
   const list = useRef<HTMLDivElement>(null);
+  const input = useRef<HTMLInputElement>(null);
+  const stick = useRef(true); // was the reader at the bottom before this update?
   const count = messages?.length ?? 0;
+  const lastIsMine = messages?.[count - 1]?.author === "user";
 
+  // Follow new messages only if the reader is already at the bottom (or just sent one).
+  // If they scrolled up to read, leave them there and offer a way back.
   useEffect(() => {
+    const el = list.current;
+    if (!el) return;
+    if (stick.current || lastIsMine) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+    else requestAnimationFrame(() => setUnseen(true));
+  }, [count, sending, lastIsMine]);
+
+  // "/" jumps to the composer from anywhere on the desk.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement;
+      if (e.key === "/" && !e.metaKey && !e.ctrlKey && !/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) && !t.isContentEditable) {
+        e.preventDefault();
+        input.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const onScroll = () => {
+    const el = list.current!;
+    stick.current = el.scrollHeight - el.scrollTop - el.clientHeight < 48;
+    if (stick.current && unseen) setUnseen(false);
+  };
+  const toBottom = () => {
     list.current?.scrollTo({ top: list.current.scrollHeight, behavior: "smooth" });
-  }, [count, sending]);
+    setUnseen(false);
+  };
 
   const submit = (t: string) => {
     if (!t.trim() || sending) return;
@@ -35,8 +67,10 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
   };
 
   return (
-    <section aria-label="Chat with Meera" className="flex min-h-0 flex-col rounded-xl border border-line bg-surface shadow-[0_1px_2px_rgb(17_24_39/0.04)]">
-      <div ref={list} className="scroll-quiet min-h-0 flex-1 space-y-4 overflow-y-auto p-5" data-testid="chat-log">
+    <section aria-label="Chat with Meera" className="relative flex min-h-0 flex-col rounded-xl border border-line bg-surface shadow-[0_1px_2px_rgb(17_24_39/0.04)]">
+      {/* A soft scroll edge where messages meet the composer, instead of a hard rule. */}
+      <div ref={list} onScroll={onScroll} role="log" aria-live="polite" aria-label="Conversation"
+        className="scroll-quiet min-h-0 flex-1 space-y-4 overflow-y-auto p-5 [mask-image:linear-gradient(to_bottom,transparent,#000_14px,#000_calc(100%-24px),transparent)]" data-testid="chat-log">
         <AgentBubble>
           <p>
             Hi {person.name}. I&apos;m Meera, your AP employee. {working ? "I'm working through today's invoices now." : "I've been through today's invoices."} Anything that doesn&apos;t match its PO and goods receipt, I hold and tell you why. Ask me about any invoice, and decide right here.
@@ -59,11 +93,17 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
         )}
         {sending && (
           <AgentBubble>
-            <p className="presence-pulse text-muted">Checking…</p>
+            <p className="thinking flex h-5 items-center gap-1" aria-label="Meera is checking"><span className="size-1.5 rounded-full bg-muted" /><span className="size-1.5 rounded-full bg-muted" /><span className="size-1.5 rounded-full bg-muted" /></p>
           </AgentBubble>
         )}
       </div>
-      <div className="border-t border-line p-3">
+      {unseen && (
+        <button type="button" onClick={toBottom}
+          className="pressable animate-pop absolute bottom-[132px] left-1/2 z-10 -translate-x-1/2 rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-ink-2 shadow-md hover:text-ink">
+          New message ↓
+        </button>
+      )}
+      <div className="p-3 pt-1">
         <div className="mb-2 flex flex-wrap gap-1.5">
           {SUGGESTIONS.map((s) => (
             <button key={s} type="button" onClick={() => submit(s)} disabled={sending}
@@ -72,10 +112,11 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
             </button>
           ))}
         </div>
-        <form onSubmit={(e) => { e.preventDefault(); submit(draft); }} className="flex items-center gap-2 rounded-xl border border-line-2 bg-surface px-3 py-1.5 focus-within:border-accent">
+        <form onSubmit={(e) => { e.preventDefault(); submit(draft); }} className="flex items-center gap-2 rounded-xl border border-line-2 bg-surface px-3 py-1.5 transition-[border-color,box-shadow] focus-within:border-accent focus-within:ring-4 focus-within:ring-accent/10">
           <label htmlFor="chat-input" className="sr-only">Message Meera</label>
-          <input id="chat-input" value={draft} onChange={(e) => setDraft(e.target.value)} maxLength={500} autoComplete="off"
+          <input ref={input} id="chat-input" value={draft} onChange={(e) => setDraft(e.target.value)} maxLength={500} autoComplete="off"
             placeholder={`Ask Meera anything, ${person.name}…`} className="min-w-0 flex-1 bg-transparent py-1.5 text-sm outline-none placeholder:text-muted" />
+          {!draft && <kbd className="hidden rounded border border-line px-1.5 font-mono text-[10px] text-muted sm:inline" aria-hidden>/</kbd>}
           <button type="submit" disabled={!draft.trim() || sending} aria-label="Send"
             className="pressable grid size-8 place-items-center rounded-lg bg-ink text-white disabled:bg-line-2">
             <ArrowUp className="size-4" />

@@ -52,7 +52,7 @@ test("ask why, approve, undo, refuse over limit, lead decides, teach a rule, rul
   await expect(feed.locator("li", { hasText: "Held INV-4481" })).toContainText("by rule");
 
   // 6. The metric moved.
-  await expect(page.getByTestId("metric-median")).not.toHaveText("–");
+  await expect(page.getByTestId("metric-median")).not.toHaveText("No decisions yet");
 });
 
 test("the same tools work over MCP, under the same permissions", async ({ page }) => {
@@ -62,7 +62,7 @@ test("the same tools work over MCP, under the same permissions", async ({ page }
   const rpc = async (method: string, params?: unknown) => (await page.request.post(url, { data: { jsonrpc: "2.0", id: 1, method, params } })).json();
 
   const init = await rpc("initialize", { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "e2e", version: "1" } });
-  expect(init.result.serverInfo.name).toBe("deskside");
+  expect(init.result.serverInfo.name).toBe("nod");
   const tools = await rpc("tools/list");
   expect(tools.result.tools.map((t: { name: string }) => t.name)).toContain("approve_invoice");
 

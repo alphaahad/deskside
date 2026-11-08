@@ -1,4 +1,4 @@
-# Video script: Deskside (2:00)
+# Video script: Nod (2:00)
 
 Screen: the deployed app at 1440 × 900, a fresh workspace (Reset demo), signed in as Priya.
 Spoken lines are in quotes; **[on screen]** is what to do.
@@ -10,7 +10,7 @@ Spoken lines are in quotes; **[on screen]** is what to do.
 **[on screen]** The desk, with Meera already reading invoices and the feed filling up on the right.
 
 > "AI employees already do most of accounts payable. But when one holds an invoice, the finance lead has to log into yet another tool to find out why. So held items sit for days, and trust in the agent stalls.
-> Deskside lets you just ask your digital employee, and decide right there.
+> Nod lets you just ask your digital employee, and decide right there.
 > I measure one thing: the median time from the agent holding an item to a human decision. The guardrail: decisions made in chat must not get reversed more often than ones made with buttons."
 
 ## 0:20–1:40 · Demo (80s)

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Readiness } from "./Readiness";
 
-export const metadata: Metadata = { title: "Deployment readiness · Deskside" };
+export const metadata: Metadata = { title: "Deployment readiness · Nod" };
 
 export default function ReadinessPage() {
   return (

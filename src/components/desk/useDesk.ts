@@ -33,6 +33,12 @@ export function useDesk() {
   const [messages, setMessages] = useState<ChatMessage[] | null>(null);
   const [sending, setSending] = useState(false);
   const [notice, setNotice] = useState<Notice>(null);
+  // Confirmations fade on their own; errors stay until dismissed.
+  useEffect(() => {
+    if (notice?.tone !== "ok") return;
+    const t = setTimeout(() => setNotice(null), 4000);
+    return () => clearTimeout(t);
+  }, [notice]);
   const working = useRef(false);
 
   const refresh = useCallback(async () => {

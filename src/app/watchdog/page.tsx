@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { AlertTriangle, PauseCircle } from "lucide-react";
 
-export const metadata: Metadata = { title: "Portal watchdog · Deskside" };
+export const metadata: Metadata = { title: "Portal watchdog · Nod" };
 
 const before = [["Invoice No.", "Date", "Amount (INR)", "Status"], ["KPC-0417", "08 Nov 2026", "42,480.00", "Open"], ["KPC-0402", "02 Nov 2026", "53,808.00", "Paid"]];
 const after = [["Date", "Document #", "Status", "Gross value"], ["08 Nov 2026", "KPC-0417", "Open", "₹42,480.00"], ["02 Nov 2026", "KPC-0402", "Paid", "₹53,808.00"]];
@@ -19,7 +19,7 @@ export default function WatchdogPage() {
         This page is a static example of the alert. Nothing here is connected to a real portal; Kaveri Packaging and its portal are mock data.
       </p>
 
-      <article className="mt-6 rounded-xl border border-bad/25 bg-surface shadow-[0_1px_2px_rgb(17_24_39/0.04)]">
+      <article className="animate-enter mt-6 rounded-xl border border-bad/25 bg-surface shadow-[0_1px_2px_rgb(17_24_39/0.04)]">
         <header className="flex items-start gap-3 border-b border-line p-4">
           <AlertTriangle className="mt-0.5 size-5 text-bad" aria-hidden />
           <div>
@@ -38,8 +38,8 @@ export default function WatchdogPage() {
         <footer className="flex flex-wrap items-center gap-2 border-t border-line p-4">
           <span className="inline-flex items-center gap-1.5 text-sm text-ink-2"><PauseCircle className="size-4 text-warn" aria-hidden /> Proposed mapping: Document # → invoice number, Gross value → total. Re-checked against 2 invoices already in the ERP: both match.</span>
           <div className="ml-auto flex gap-2">
-            <button type="button" disabled className="rounded-lg bg-ink px-3 py-1.5 text-sm font-medium text-white opacity-60">Accept mapping & resume</button>
-            <button type="button" disabled className="rounded-lg border border-line px-3 py-1.5 text-sm opacity-60">Keep paused</button>
+            <button type="button" disabled title="Static example" className="rounded-lg bg-ink px-3 py-1.5 text-sm font-medium text-white opacity-60">Accept mapping & resume</button>
+            <button type="button" disabled title="Static example" className="rounded-lg border border-line px-3 py-1.5 text-sm opacity-60">Keep paused</button>
           </div>
         </footer>
       </article>

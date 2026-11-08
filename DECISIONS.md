@@ -1,6 +1,6 @@
 # Decisions
 
-What I built first, what I cut, and why. Items marked **ASSUMPTION** are things I believe about Zamp, its customers or finance teams that I couldn't verify from public material. They're collected in §8.
+What I built first, what I cut, and why. Items marked **ASSUMPTION** are things I believe about Zamp, its customers or finance teams that I couldn't verify from public material. They're collected in §9.
 
 ## 1. The metric
 
@@ -76,13 +76,22 @@ What I built first, what I cut, and why. Items marked **ASSUMPTION** are things 
 - **The model is Gemini (`gemini-3.5-flash-lite`) on the free tier**, with rate limiting per workspace, a single retry on short 429s, then offline mode.
 - **The event log is an append-only `events` table.** It feeds the activity feed, undo and the metrics.
 
-## 7. What I'd do next
+## 7. Interaction design
+- **The name:** Meera asks, you give the nod. The name is the moment the metric measures.
+- **Respond on press:** decision buttons dim the row and lock the moment they're pressed, so there's no dead time while the server decides.
+- **Spatial consistency:** the document sheet enters from the right and leaves the same way. It uses CSS transitions, so a close mid-entry reverses from where it is. Popovers grow from their trigger.
+- **Focus is always somewhere sensible:** the sheet moves focus in, traps it, and returns it to the chip that opened it. The popover returns focus on Escape. `/` jumps to the composer.
+- **Don't fight the reader:** the chat only follows new messages if you're already at the bottom; otherwise it offers "New message ↓".
+- **Calm motion:** everything uses one critically damped curve, with no bounce, because nothing here is flicked. Reduced motion swaps travel for cross-fades, reduced transparency makes the bar solid, and higher contrast firms the edges.
+- **Honest numbers:** the metric shows "No decisions yet" rather than a dash, and there's no "N× faster" headline against a baseline that is mock data.
+
+## 8. What I'd do next
 1. Slack and Teams on the same tools, and real SSO identities on MCP (OAuth) in place of the demo URL key.
 2. Separate misclick undos from real reversals, and add p90 plus "% within 4h" to the metric card.
 3. A review flow for rule changes, so leads can propose rules in chat and a second person approves them.
 4. Portal watchdog with real fetchers, then deployment readiness on real customer samples.
 
-## 8. Assumptions about Zamp (verify these first)
+## 9. Assumptions about Zamp (verify these first)
 1. Zamp's digital employees hold exceptions for human review, and today that review happens in Zamp's own console.
 2. Finance leads aren't in that console daily, so holds wait. Hold-to-decision time is days, not hours.
 3. Zamp's agents can expose structured evidence (PO, receipt and invoice lines) for each hold, which this layer would read rather than recompute.

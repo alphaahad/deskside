@@ -18,14 +18,14 @@ const ok = (id: Rpc["id"], result: unknown) => ({ jsonrpc: "2.0", id, result });
 const err = (id: Rpc["id"], code: number, message: string) => ({ jsonrpc: "2.0", id, error: { code, message } });
 
 export async function GET() {
-  return new NextResponse("Deskside MCP endpoint: POST JSON-RPC here. Mock data only.", { status: 405, headers: { allow: "POST" } });
+  return new NextResponse("Nod MCP endpoint: POST JSON-RPC here. Mock data only.", { status: 405, headers: { allow: "POST" } });
 }
 
 export async function POST(req: Request) {
   const url = new URL(req.url);
   const wsId = url.searchParams.get("ws");
   const as = url.searchParams.get("as");
-  if (!wsId || !/^ws_[a-z0-9]{16}$/.test(wsId)) return NextResponse.json(err(null, -32001, "Add ?ws=<workspace id> from the Deskside 'Use from Claude' panel."), { status: 400 });
+  if (!wsId || !/^ws_[a-z0-9]{16}$/.test(wsId)) return NextResponse.json(err(null, -32001, "Add ?ws=<workspace id> from the Nod 'Use from Claude' panel."), { status: 400 });
   if (as && !people.some((p) => p.id === as)) return NextResponse.json(err(null, -32001, "Unknown person in ?as="), { status: 400 });
 
   let body: Rpc | Rpc[];
@@ -47,7 +47,7 @@ async function handle(m: Rpc, wsId: string, as: string | null) {
       return ok(m.id, {
         protocolVersion: (m.params?.protocolVersion as string) ?? "2025-06-18",
         capabilities: { tools: {} },
-        serverInfo: { name: "deskside", title: "Deskside: Meera, AP employee (mock data)", version: "0.1.0" },
+        serverInfo: { name: "nod", title: "Nod: Meera, AP employee (mock data)", version: "0.1.0" },
         instructions: "Tools to ask Meera, an AI accounts-payable employee, about held invoices and to approve, reject or undo. All data is mock data. Only approve or reject when the user explicitly asks.",
       });
     case "ping":

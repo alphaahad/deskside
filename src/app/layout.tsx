@@ -7,7 +7,7 @@ const plexSans = IBM_Plex_Sans({ variable: "--font-plex-sans", subsets: ["latin"
 const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "Deskside · talk to your AI AP employee",
+  title: "Nod · your AP employee asks, you decide",
   description: "A control room where a finance lead asks their AI accounts-payable employee why things are on hold, and decides right in the chat. All data is mock data.",
 };
 
