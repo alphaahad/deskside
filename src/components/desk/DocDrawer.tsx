@@ -57,7 +57,12 @@ export function DocDrawer({ target, onClose }: { target: { invoiceId: string; ci
           <p className="p-6 text-sm text-muted">Loading…</p>
         ) : (
           <div className="grid min-h-0 flex-1 grid-cols-[1fr_440px]">
-            <iframe src={`${ready.pdf}#view=FitH&toolbar=0`} title={`${ready.invoiceId} PDF`} className="h-full w-full border-r border-line bg-white" />
+            <div className="relative h-full border-r border-line bg-white">
+              <iframe src={`${ready.pdf}#view=FitH&toolbar=0`} title={`${ready.invoiceId} PDF`} className="h-full w-full" />
+              <a href={ready.pdf} target="_blank" rel="noreferrer" className="absolute bottom-3 left-3 rounded-md border border-line bg-surface px-2 py-1 text-xs text-ink-2 shadow-sm hover:text-ink">
+                Open the PDF in a new tab
+              </a>
+            </div>
             <div className="scroll-quiet min-h-0 space-y-4 overflow-y-auto p-4">
               {ready.extraction && (
                 <Block title={`Invoice ${ready.extraction.invoice_number}`} sub={`What Meera read · Gemini (${ready.read.source}${ready.read.ms ? `, ${(ready.read.ms / 1000).toFixed(1)}s` : ""})`} focus={focus(ready.invoiceId)}>
