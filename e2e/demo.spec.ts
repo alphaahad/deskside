@@ -4,11 +4,12 @@ import { test, expect, type Page } from "@playwright/test";
 // the scripted demo works in offline mode (quota cutoff, outage).
 
 async function ask(page: Page, text: string) {
-  const before = await page.getByTestId("chat-log").locator("p", { hasText: /^Meera/ }).count();
+  const replies = page.getByTestId("agent-msg");
+  const before = await replies.count();
   await page.getByLabel("Message Meera").fill(text);
   await page.getByLabel("Message Meera").press("Enter");
-  // Wait for Meera's reply bubble to land.
-  await expect(page.getByTestId("chat-log").locator("p", { hasText: /^Meera/ })).toHaveCount(before + 1, { timeout: 60_000 });
+  // Wait for Meera's stored reply to land (the walkthrough's guide bubble is not a reply).
+  await expect(replies).toHaveCount(before + 1, { timeout: 60_000 });
 }
 
 test("ask why, approve, undo, refuse over limit, lead decides, teach a rule, rule applies to new mail", async ({ page }) => {
@@ -53,6 +54,23 @@ test("ask why, approve, undo, refuse over limit, lead decides, teach a rule, rul
 
   // 6. The metric moved.
   await expect(page.getByTestId("metric-median")).not.toHaveText("No decisions yet");
+
+  // 7. The walkthrough ticked itself off from real state, even though we typed instead of using it.
+  await expect(page.getByTestId("demo-path-count")).toHaveText("7 of 7");
+});
+
+test("a first-time visitor can finish the demo using only Meera's guide", async ({ page }) => {
+  await page.goto("/?internal=1");
+  await page.evaluate(() => { try { localStorage.removeItem("nod_tour_hidden"); } catch {} });
+  const go = page.getByTestId("guide-action");
+  const count = page.getByTestId("demo-path-count");
+  for (let step = 1; step <= 7; step++) {
+    await expect(go).toBeVisible({ timeout: 90_000 });
+    await go.click();
+    await expect(count).toHaveText(`${step} of 7`, { timeout: 60_000 });
+  }
+  await expect(page.getByTestId("guide")).toContainText("That's the whole loop");
+  await expect(page.getByTestId("feed").locator("li", { hasText: "Held INV-4481" })).toContainText("R-1");
 });
 
 test("the same tools work over MCP, under the same permissions", async ({ page }) => {

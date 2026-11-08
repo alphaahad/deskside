@@ -43,4 +43,6 @@ Spoken lines are in quotes; **[on screen]** is what to do.
 
 ---
 
+**The walkthrough:** first-time visitors get Meera's guide and a "Demo path" checklist that follows this exact script. For the recording, either use the guide's buttons as your on-screen cue, or click **Hide** on the Demo path card for a clean desk. Choose before you start; the choice is remembered in this browser.
+
 **Fallbacks while recording:** if Gemini is slow or rate-limited, Meera answers in offline mode (labelled under her name) and the same scripted lines still work. If anything goes wrong, use **Reset demo** for a clean workspace.

@@ -163,3 +163,13 @@ body {
   @keyframes pop { from { opacity: 0; } }
   .thinking span { animation: none; opacity: 0.6; }
 }
+
+/* Walkthrough: the control Meera is pointing at gets a ring that breathes slowly (about 2.4s, not a blink). */
+@keyframes tour-breathe {
+  0%, 100% { box-shadow: 0 0 0 2px rgb(29 78 216 / 0.45), 0 0 0 5px rgb(29 78 216 / 0.06); }
+  50% { box-shadow: 0 0 0 2px rgb(29 78 216 / 0.7), 0 0 0 7px rgb(29 78 216 / 0.14); }
+}
+.tour-glow { animation: tour-breathe 2.4s ease-in-out infinite; position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .tour-glow { animation: none; box-shadow: 0 0 0 2px rgb(29 78 216 / 0.6); }
+}

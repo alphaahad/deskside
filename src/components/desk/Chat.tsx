@@ -11,14 +11,16 @@ const SUGGESTIONS = [
   "What's on hold?",
   "Why is invoice 4471 on hold?",
   "Approve it",
+  "Undo that",
   "Approve 4477",
   "Always hold quantity variance over 5%",
   "How are we doing?",
 ];
 
-export function Chat({ messages, person, events, sending, onSend, onUndo, open, working }: {
+export function Chat({ messages, person, events, sending, onSend, onUndo, open, working, guide, guideKey, tourChip }: {
   messages: ChatMessage[] | null; person: Person; events: FeedEvent[]; sending: boolean; working: boolean;
   onSend: (t: string) => void; onUndo: (id: number) => void; open: OpenDoc;
+  guide?: React.ReactNode; guideKey?: string; tourChip?: string | null;
 }) {
   const [draft, setDraft] = useState("");
   const [unseen, setUnseen] = useState(false);
@@ -35,7 +37,7 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
     if (!el) return;
     if (stick.current || lastIsMine) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
     else requestAnimationFrame(() => setUnseen(true));
-  }, [count, sending, lastIsMine]);
+  }, [count, sending, lastIsMine, guideKey]);
 
   // "/" jumps to the composer from anywhere on the desk.
   useEffect(() => {
@@ -73,7 +75,9 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
         className="scroll-quiet min-h-0 flex-1 space-y-4 overflow-y-auto p-5 [mask-image:linear-gradient(to_bottom,transparent,#000_14px,#000_calc(100%-24px),transparent)]" data-testid="chat-log">
         <AgentBubble>
           <p>
-            Hi {person.name}. I&apos;m Meera, your AP employee. {working ? "I'm working through today's invoices now." : "I've been through today's invoices."} Anything that doesn&apos;t match its PO and goods receipt, I hold and tell you why. Ask me about any invoice, and decide right here.
+            Hi {person.name}. You&apos;re {person.role === "lead" ? "the finance lead" : "an AP clerk"} at Acme Fulfilment, a mock company. I&apos;m Meera, your AI accounts-payable employee.
+            I read every vendor invoice, match it against its purchase order and goods receipt, and post the ones that match.
+            Anything that doesn&apos;t, I hold and tell you why. {working ? "I'm reading today's invoices now." : "I've read today's invoices."} You decide on the holds, right here in chat.
           </p>
         </AgentBubble>
         {messages?.map((m) =>
@@ -85,12 +89,13 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
               </div>
             </div>
           ) : (
-            <AgentBubble key={m.id} mode={m.mode}>
+            <AgentBubble key={m.id} mode={m.mode} testId="agent-msg">
               {m.text && <p className="whitespace-pre-line">{m.text}</p>}
               {m.cards && <Cards cards={m.cards} events={events} open={open} onUndo={onUndo} onAsk={submit} />}
             </AgentBubble>
           ),
         )}
+        {!sending && guide}
         {sending && (
           <AgentBubble>
             <p className="thinking flex h-5 items-center gap-1" aria-label="Meera is checking"><span className="size-1.5 rounded-full bg-muted" /><span className="size-1.5 rounded-full bg-muted" /><span className="size-1.5 rounded-full bg-muted" /></p>
@@ -106,8 +111,8 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
       <div className="p-3 pt-1">
         <div className="mb-2 flex flex-wrap gap-1.5">
           {SUGGESTIONS.map((s) => (
-            <button key={s} type="button" onClick={() => submit(s)} disabled={sending}
-              className="pressable rounded-full border border-line bg-canvas px-2.5 py-1 text-xs text-ink-2 hover:border-line-2 hover:text-ink disabled:opacity-50">
+            <button key={s} type="button" onClick={() => submit(s)} disabled={sending} data-tour={s === tourChip ? "now" : undefined}
+              className={`pressable rounded-full border px-2.5 py-1 text-xs disabled:opacity-50 ${s === tourChip ? "tour-glow border-accent/50 bg-accent-soft font-medium text-accent" : "border-line bg-canvas text-ink-2 hover:border-line-2 hover:text-ink"}`}>
               {s}
             </button>
           ))}
@@ -127,9 +132,9 @@ export function Chat({ messages, person, events, sending, onSend, onUndo, open, 
   );
 }
 
-function AgentBubble({ children, mode }: { children: React.ReactNode; mode?: ChatMessage["mode"] }) {
+function AgentBubble({ children, mode, testId }: { children: React.ReactNode; mode?: ChatMessage["mode"]; testId?: string }) {
   return (
-    <div className="animate-enter flex gap-2.5">
+    <div className="animate-enter flex gap-2.5" data-testid={testId}>
       <Avatar size={28} />
       <div className="min-w-0 max-w-[88%] flex-1">
         <p className="mb-1 text-[11px] text-muted">

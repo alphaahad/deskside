@@ -1,6 +1,8 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Inbox, RotateCcw, X, Check, Ban, Trash2, Plug } from "lucide-react";
+import { Inbox, RotateCcw, X, Check, Ban, Trash2, Plug, Sparkles } from "lucide-react";
+import { guide as tourGuide, highlight, type TourAction } from "@/lib/tour";
+import { DemoPath, GuideBubble } from "./Tour";
 import type { Citation } from "@/lib/types";
 import { people } from "@/lib/data/seed";
 import { inr0 } from "@/lib/format";
@@ -18,6 +20,14 @@ export function Desk() {
   const [doc, setDoc] = useState<DocTarget | null>(null);
   const [docOpen, setDocOpen] = useState(false);
   const [pending, setPending] = useState<Record<string, "approve" | "reject">>({});
+  // Walkthrough visibility is a per-viewer convenience; if storage is unavailable it just stays on.
+  const [tourHidden, setTourHidden] = useState(() => {
+    try { return typeof window !== "undefined" && window.localStorage.getItem("nod_tour_hidden") === "1"; } catch { return false; }
+  });
+  const setTour = (hidden: boolean) => {
+    setTourHidden(hidden);
+    try { window.localStorage.setItem("nod_tour_hidden", hidden ? "1" : "0"); } catch { /* fine: in-memory only */ }
+  };
 
   // Mount the sheet off-screen, then open it on the next frame so the slide-in actually transitions.
   const openDoc = useCallback((invoiceId: string, cite?: Citation) => {
@@ -40,6 +50,17 @@ export function Desk() {
   const working = s.status.pending > 0;
   const decided = s.status.approved + s.status.rejected;
 
+  const tour = tourGuide({ ...s, messages: d.messages ?? [] });
+  const target = tourHidden ? null : highlight(tour.guide);
+  const glow = (id: string) => (target === id ? "tour-glow" : "");
+  const onTourAction = (a: TourAction) => {
+    if (a.kind === "send") d.send(a.text);
+    else if (a.kind === "person") d.switchPerson(a.id);
+    else if (a.kind === "mail") d.deliverMail();
+    else d.reset();
+  };
+  const guideKey = tour.guide.state === "step" ? `${tour.guide.step.id}:${tour.guide.text}` : tour.guide.state;
+
   return (
     <div className="mx-auto flex h-full max-w-[1600px] flex-col gap-4 px-5 py-4">
       {/* Who you're working with, and what she's doing right now */}
@@ -59,8 +80,14 @@ export function Desk() {
           </div>
         </div>
         {s.status.mailWaiting && (
-          <button type="button" onClick={d.deliverMail} className="pressable animate-enter inline-flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent-soft px-3 py-1.5 text-sm font-medium text-accent hover:border-accent/50">
+          <button type="button" onClick={d.deliverMail} data-tour="mail"
+            className={`${glow("mail")} pressable animate-enter inline-flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent-soft px-3 py-1.5 text-sm font-medium text-accent hover:border-accent/50`}>
             <Inbox className="size-4" aria-hidden /> New mail (3)
+          </button>
+        )}
+        {tourHidden && (
+          <button type="button" onClick={() => setTour(false)} className="pressable inline-flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-accent hover:bg-accent-soft">
+            <Sparkles className="size-3.5" aria-hidden /> Show the demo path
           </button>
         )}
         <div className="ml-auto flex items-center gap-2">
@@ -69,8 +96,8 @@ export function Desk() {
             {people.map((p) => {
               const on = s.person.id === p.id;
               return (
-                <button key={p.id} type="button" role="radio" aria-checked={on} onClick={() => !on && d.switchPerson(p.id)}
-                  className={`pressable rounded-md px-2.5 py-1 text-sm ${on ? "bg-ink text-white shadow-sm" : "text-ink-2 hover:bg-canvas hover:text-ink"}`}>
+                <button key={p.id} type="button" role="radio" aria-checked={on} onClick={() => !on && d.switchPerson(p.id)} data-tour={`person-${p.id}`}
+                  className={`${glow(`person-${p.id}`)} pressable rounded-md px-2.5 py-1 text-sm ${on ? "bg-ink text-white shadow-sm" : "text-ink-2 hover:bg-canvas hover:text-ink"}`}>
                   {p.name} <span className={on ? "text-white/70" : "text-muted"}>· {p.title}{p.limit ? ` ≤ ${inr0(p.limit)}` : ""}</span>
                 </button>
               );
@@ -92,9 +119,12 @@ export function Desk() {
 
       <div className="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_440px] gap-4">
         <Chat messages={d.messages} person={s.person} events={s.events} sending={d.sending} working={working}
-          onSend={d.send} onUndo={d.undo} open={openDoc} />
+          onSend={d.send} onUndo={d.undo} open={openDoc}
+          guide={tourHidden ? null : <GuideBubble guide={tour.guide} onAction={onTourAction} />}
+          guideKey={tourHidden ? "hidden" : guideKey} tourChip={target} />
 
         <div className="scroll-quiet flex min-h-0 flex-col gap-4 overflow-y-auto pr-0.5">
+          {!tourHidden && <DemoPath done={tour.done} current={tour.current?.id ?? null} onHide={() => setTour(true)} />}
           <MetricCard m={s.metrics} />
 
           <section aria-labelledby="waiting-h" className="rounded-xl border border-line bg-surface">

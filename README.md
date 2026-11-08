@@ -22,6 +22,7 @@ AI employees already do most of accounts payable. When one holds an invoice, the
 | **Trust model** | The AP clerk approves up to ₹1,00,000; the finance lead approves anything. Over the limit, Meera refuses, explains, and escalates. Every action is logged. |
 | **Remembers rules** | "Always hold quantity variance over 5%" becomes rule R-1 and applies to the next invoices that arrive. Rules can only make Meera stricter. |
 | **Metric card** | Live hold → decision median against the mock baseline, plus chat vs button reversal rates with a sample-size gate. |
+| **First-run walkthrough** | Meera frames the setup (who you are, what she does, what is mock), then guides you through the 7-step demo path one step at a time, explaining why each step matters. A checklist ticks itself off from real state, so it works whether you follow the guide, type, or use buttons, and it survives a refresh. Hide it any time. |
 | **Use from Claude** | The same tools over MCP (`/api/mcp`), under the same permissions and log. |
 | **Next (thin)** | *Portal watchdog*, a static, labelled example alert, and *Deployment readiness*, which runs sample (or uploaded) invoices to show what would be auto-decided and what would go to review. |
 
@@ -72,8 +73,8 @@ DATABASE_URL=postgres://...         # Neon or any Postgres
 
 ### Tests
 ```bash
-npm test             # 44 unit tests: match engine, rules, trust model, metrics, intent router, Gemini snapshot accuracy
-npm run e2e          # the video's exact flow + MCP, in real Chrome, offline mode, fresh in-memory DB
+npm test             # 50 unit tests: match engine, rules, trust model, metrics, intent router, walkthrough, Gemini snapshot accuracy
+npm run e2e          # the video's exact flow, a guide-only first visit, and MCP, in real Chrome, offline mode, fresh in-memory DB
 E2E_BASE_URL=https://onyourdeskside.vercel.app npm run e2e   # same tests against the live site
 npm run pdfs         # regenerate the mock invoice PDFs (deterministic bytes)
 npm run cache:export # snapshot live Gemini reads from the local DB (stop the dev server first)
