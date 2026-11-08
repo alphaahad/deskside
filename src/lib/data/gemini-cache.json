@@ -1,0 +1,704 @@
+[
+ {
+  "key": "df91b5795c2d2415fed1c2f962bfabc2fe7835ce9a5beb445ee1abfa7ea6054f",
+  "value": {
+   "tax": 6595.2,
+   "lines": [
+    {
+     "qty": 800,
+     "item": "KP-BX5",
+     "price": 38,
+     "amount": 30400,
+     "description": "5-ply carton 18x12x12"
+    },
+    {
+     "qty": 120,
+     "item": "KP-TP48",
+     "price": 52,
+     "amount": 6240,
+     "description": "BOPP tape 48mm"
+    }
+   ],
+   "total": 43235.2,
+   "subtotal": 36640,
+   "po_number": "PO-2260",
+   "vendor_name": "Kaveri Packaging Co",
+   "invoice_date": "2026-10-28",
+   "vendor_gstin": "33AAKCK2210P1Z2",
+   "invoice_number": "KPC-0391"
+  },
+  "created_at": "2026-11-08T14:10:43.111Z"
+ },
+ {
+  "key": "2f9f41dfefb3ce03612a7c6e52395f633f7b4eeb6f5582c03a23b675b835511d",
+  "value": {
+   "tax": 4410,
+   "lines": [
+    {
+     "qty": 60,
+     "item": "SO-A4",
+     "price": 265,
+     "amount": 15900,
+     "description": "A4 paper ream"
+    },
+    {
+     "qty": 4,
+     "item": "SO-TNR",
+     "price": 2150,
+     "amount": 8600,
+     "description": "Toner cartridge 88A"
+    }
+   ],
+   "total": 28910,
+   "subtotal": 24500,
+   "po_number": "PO-2261",
+   "vendor_name": "Saffron Office Supplies - Mumbai",
+   "invoice_date": "2026-10-29",
+   "vendor_gstin": "27AASFS9921Q1Z8",
+   "invoice_number": "SOS/26-27/1182"
+  },
+  "created_at": "2026-11-08T14:10:46.061Z"
+ },
+ {
+  "key": "6ad3c6f8adda04224a538feb37a0506010e2c84c82addba712f54ec19b90823a",
+  "value": {
+   "tax": 4608,
+   "lines": [
+    {
+     "qty": 40,
+     "item": "HS-AN40",
+     "price": 640,
+     "amount": 25600,
+     "description": "Angle 40x40x5"
+    }
+   ],
+   "total": 30208,
+   "subtotal": 25600,
+   "po_number": "PO-2262",
+   "vendor_name": "HALDENWERK STEEL SUPPLIES PVT LTD",
+   "invoice_date": "2026-10-29",
+   "vendor_gstin": "29AAHCH4471K1Z5",
+   "invoice_number": "HSS-INV-3381"
+  },
+  "created_at": "2026-11-08T14:10:48.790Z"
+ },
+ {
+  "key": "8da881be46997037a58c8448e2ed143af01cd836e868e4b9ef14159dc56b6e00",
+  "value": {
+   "tax": 3159,
+   "lines": [
+    {
+     "qty": 6,
+     "item": "BL-CBL25",
+     "price": 2925,
+     "amount": 17550,
+     "description": "Cable 2.5 sq mm (90m)"
+    }
+   ],
+   "total": 20709,
+   "subtotal": 17550,
+   "po_number": "PO-2263",
+   "vendor_name": "BRIGHTLINE ELECTRICALS LLP",
+   "invoice_date": "2026-10-30",
+   "vendor_gstin": "07AAJFB5532M1Z1",
+   "invoice_number": "BLE/1027"
+  },
+  "created_at": "2026-11-08T14:10:51.691Z"
+ },
+ {
+  "key": "1dfe663198c4b8aaeda878c60e4d3d9482a7c5a352d57f32dcbec299afcf47a5",
+  "value": {
+   "tax": 4212,
+   "lines": [
+    {
+     "qty": 30,
+     "item": "CC-DGR",
+     "price": 780,
+     "amount": 23400,
+     "description": "Degreaser 5L"
+    }
+   ],
+   "total": 27612,
+   "subtotal": 23400,
+   "po_number": "PO-2264",
+   "vendor_name": "Coastal Chemicals Ltd",
+   "invoice_date": "2026-10-30",
+   "vendor_gstin": "24AACCC7781R1Z9",
+   "invoice_number": "CCL-24-5520"
+  },
+  "created_at": "2026-11-08T14:10:54.919Z"
+ },
+ {
+  "key": "68c1048453a7ce0e479879544837576d313a0f787e86efb8d2fcda076daf6804",
+  "value": {
+   "tax": 2745,
+   "lines": [
+    {
+     "qty": 25,
+     "item": "KP-SW",
+     "price": 610,
+     "amount": 15250,
+     "description": "Stretch wrap roll"
+    }
+   ],
+   "total": 17995,
+   "subtotal": 15250,
+   "po_number": "PO-2265",
+   "vendor_name": "Kaveri Packaging Co",
+   "invoice_date": "2026-10-31",
+   "vendor_gstin": "33AAKCK2210P1Z2",
+   "invoice_number": "KPC-0398"
+  },
+  "created_at": "2026-11-08T14:10:58.237Z"
+ },
+ {
+  "key": "ae532fcd4c4a5e583ab8c6fc6ca2b16be54cbf96dce7cea562b6d0d8823507d6",
+  "value": {
+   "tax": 5760,
+   "lines": [
+    {
+     "qty": 5,
+     "item": "SO-CHR",
+     "price": 6400,
+     "amount": 32000,
+     "description": "Task chair"
+    }
+   ],
+   "total": 37760,
+   "subtotal": 32000,
+   "po_number": "PO-2266",
+   "vendor_name": "Saffron Office Supplies - Mumbai",
+   "invoice_date": "2026-10-31",
+   "vendor_gstin": "27AASFS9921Q1Z8",
+   "invoice_number": "SOS/26-27/1190"
+  },
+  "created_at": "2026-11-08T14:12:00.108Z"
+ },
+ {
+  "key": "25d115fa5104e0aa0c79c4dbcf95a36b458fb63cf2927587d248e0f2bf917975",
+  "value": {
+   "tax": 4536,
+   "lines": [
+    {
+     "qty": 60,
+     "item": "HS-BLT12",
+     "price": 420,
+     "amount": 25200,
+     "description": "Hex bolt M12 (box)"
+    }
+   ],
+   "total": 29736,
+   "subtotal": 25200,
+   "po_number": "PO-2267",
+   "vendor_name": "HALDENWERK STEEL SUPPLIES PVT LTD",
+   "invoice_date": "2026-11-01",
+   "vendor_gstin": "29AAHCH4471K1Z5",
+   "invoice_number": "HSS-INV-3385"
+  },
+  "created_at": "2026-11-08T14:12:28.105Z"
+ },
+ {
+  "key": "1546ff9dad3848df9962b4f493d1ccd362d848b90e5f92bbc58040f3d4709d1e",
+  "value": {
+   "tax": 4536,
+   "lines": [
+    {
+     "qty": 80,
+     "item": "BL-MCB",
+     "price": 315,
+     "amount": 25200,
+     "description": "MCB 32A"
+    }
+   ],
+   "total": 29736,
+   "subtotal": 25200,
+   "po_number": "PO-2268",
+   "vendor_name": "BRIGHTLINE ELECTRICALS LLP",
+   "invoice_date": "2026-11-01",
+   "vendor_gstin": "07AAJFB5532M1Z1",
+   "invoice_number": "BLE/1031"
+  },
+  "created_at": "2026-11-08T14:12:49.504Z"
+ },
+ {
+  "key": "7aba18d1314e91660902e662902b535a5a9fc8a8cb5a39414d2e58bc0f743ca9",
+  "value": {
+   "tax": 4320,
+   "lines": [
+    {
+     "qty": 10,
+     "item": "CC-IPA",
+     "price": 2400,
+     "amount": 24000,
+     "description": "Isopropyl alcohol 20L"
+    }
+   ],
+   "total": 28320,
+   "subtotal": 24000,
+   "po_number": "PO-2269",
+   "vendor_name": "Coastal Chemicals Ltd",
+   "invoice_date": "2026-11-02",
+   "vendor_gstin": "24AACCC7781R1Z9",
+   "invoice_number": "CCL-24-5534"
+  },
+  "created_at": "2026-11-08T14:13:05.054Z"
+ },
+ {
+  "key": "966c6b2d0179010d05d2f0e85794f55df22748db75772749609db4a29cedac11",
+  "value": {
+   "tax": 8208,
+   "lines": [
+    {
+     "qty": 1200,
+     "item": "KP-BX5",
+     "price": 38,
+     "amount": 45600,
+     "description": "5-ply carton 18x12x12"
+    }
+   ],
+   "total": 53808,
+   "subtotal": 45600,
+   "po_number": "PO-2270",
+   "vendor_name": "Kaveri Packaging Co",
+   "invoice_date": "2026-11-02",
+   "vendor_gstin": "33AAKCK2210P1Z2",
+   "invoice_number": "KPC-0402"
+  },
+  "created_at": "2026-11-08T14:13:12.245Z"
+ },
+ {
+  "key": "5d2eaf46dc85d71c97a4b85af87a6c5a6a638a34f6f7e0dba1bf3bd23f01e727",
+  "value": {
+   "tax": 9540,
+   "lines": [
+    {
+     "qty": 50,
+     "item": "HS-PL6",
+     "price": 1060,
+     "amount": 53000,
+     "description": "MS plate 6mm"
+    }
+   ],
+   "total": 62540,
+   "subtotal": 53000,
+   "po_number": "PO-2271",
+   "vendor_name": "HALDENWERK STEEL SUPPLIES PVT LTD",
+   "invoice_date": "2026-11-03",
+   "vendor_gstin": "29AAHCH4471K1Z5",
+   "invoice_number": "HSS-INV-3392"
+  },
+  "created_at": "2026-11-08T14:13:15.561Z"
+ },
+ {
+  "key": "f0413a3aaf2e915271248d190c2e005742d9c010e55e0e49a53722bd2a5b205c",
+  "value": {
+   "tax": 1908,
+   "lines": [
+    {
+     "qty": 40,
+     "item": "SO-A4",
+     "price": 265,
+     "amount": 10600,
+     "description": "A4 paper ream"
+    }
+   ],
+   "total": 12508,
+   "subtotal": 10600,
+   "po_number": "PO-2272",
+   "vendor_name": "Saffron Office Supplies - Mumbai",
+   "invoice_date": "2026-11-03",
+   "vendor_gstin": "27AASFS9921Q1Z8",
+   "invoice_number": "SOS/26-27/1201"
+  },
+  "created_at": "2026-11-08T14:13:35.167Z"
+ },
+ {
+  "key": "803112f7ad5a31f1723f59f75bbd640bc84049ff0b6d3b80203e903051abbaf1",
+  "value": {
+   "tax": 5400,
+   "lines": [
+    {
+     "qty": 20,
+     "item": "BL-LED40",
+     "price": 1500,
+     "amount": 30000,
+     "description": "LED panel 40W"
+    }
+   ],
+   "total": 35400,
+   "subtotal": 30000,
+   "po_number": "PO-2273",
+   "vendor_name": "BRIGHTLINE ELECTRICALS LLP",
+   "invoice_date": "2026-11-04",
+   "vendor_gstin": "07AAJFB5532M1Z1",
+   "invoice_number": "BLE/1036"
+  },
+  "created_at": "2026-11-08T14:13:51.122Z"
+ },
+ {
+  "key": "7aadd82ac83472b424c76ec065bb9235e496820a8d75fa450e9a1298ab4398df",
+  "value": {
+   "tax": 9702,
+   "lines": [
+    {
+     "qty": 50,
+     "item": "KP-SW",
+     "price": 610,
+     "amount": 30500,
+     "description": "Stretch wrap roll"
+    },
+    {
+     "qty": 450,
+     "item": "KP-TP48",
+     "price": 52,
+     "amount": 23400,
+     "description": "BOPP tape 48mm"
+    }
+   ],
+   "total": 63602,
+   "subtotal": 53900,
+   "po_number": "PO-2274",
+   "vendor_name": "Kaveri Packaging Co",
+   "invoice_date": "2026-11-04",
+   "vendor_gstin": "33AAKCK2210P1Z2",
+   "invoice_number": "KPC-42"
+  },
+  "created_at": "2026-11-08T14:13:53.542Z"
+ },
+ {
+  "key": "fcc46addfebbab149bf58dde9d5c49c0ed1ea6fb4a929759f7b390cddefc57e3",
+  "value": {
+   "tax": 5616,
+   "lines": [
+    {
+     "qty": 40,
+     "item": "CC-DGR",
+     "price": 780,
+     "amount": 31200,
+     "description": "Degreaser 5L"
+    }
+   ],
+   "total": 36816,
+   "subtotal": 31200,
+   "po_number": "PO-2275",
+   "vendor_name": "Coastal Chemicals Ltd",
+   "invoice_date": "2026-11-05",
+   "vendor_gstin": "24AACCC7781R1Z9",
+   "invoice_number": "CCL-24-5541"
+  },
+  "created_at": "2026-11-08T14:14:05.972Z"
+ },
+ {
+  "key": "081a520d912b99fd9ade942ac1108bc5f638a736fe3948f8ead0c5d556ca0be6",
+  "value": {
+   "tax": 4392,
+   "lines": [
+    {
+     "qty": 25,
+     "item": "HS-AN40",
+     "price": 640,
+     "amount": 16000,
+     "description": "Angle 40x40x5"
+    },
+    {
+     "qty": 20,
+     "item": "HS-BLT12",
+     "price": 420,
+     "amount": 8400,
+     "description": "Hex bolt M12 (box)"
+    }
+   ],
+   "total": 28792,
+   "subtotal": 24400,
+   "po_number": "PO-2276",
+   "vendor_name": "HALDENWERK STEEL SUPPLIES PVT LTD",
+   "invoice_date": "2026-11-05",
+   "vendor_gstin": "29AAHCH4471K1Z5",
+   "invoice_number": "HSS-INV-3398"
+  },
+  "created_at": "2026-11-08T14:14:21.329Z"
+ },
+ {
+  "key": "bc0a7dd17e64be9dc1ef65755854e4b80226e85aa7b274e19b225d884abaefa9",
+  "value": {
+   "tax": 32400,
+   "lines": [
+    {
+     "qty": 120,
+     "item": "BL-LED40",
+     "price": 1500,
+     "amount": 180000,
+     "description": "LED panel 40W"
+    }
+   ],
+   "total": 212400,
+   "subtotal": 180000,
+   "po_number": "PO-2277",
+   "vendor_name": "BRIGHTLINE ELECTRICALS LLP",
+   "invoice_date": "2026-11-06",
+   "vendor_gstin": "07AAJFB5532M1Z1",
+   "invoice_number": "BLE/1040"
+  },
+  "created_at": "2026-11-08T14:14:30.908Z"
+ },
+ {
+  "key": "765075735ea3acad9e386e2ba3fe2101f688266bc70628d6ea73862da35e55b5",
+  "value": {
+   "tax": 2322,
+   "lines": [
+    {
+     "qty": 6,
+     "item": "SO-TNR",
+     "price": 2150,
+     "amount": 12900,
+     "description": "Toner cartridge 88A"
+    }
+   ],
+   "total": 15222,
+   "subtotal": 12900,
+   "po_number": "PO-2278",
+   "vendor_name": "Saffron Office Supplies - Mumbai",
+   "invoice_date": "2026-11-06",
+   "vendor_gstin": "27AASFS9921Q1Z8",
+   "invoice_number": "SOS/26-27/1214"
+  },
+  "created_at": "2026-11-08T14:14:40.916Z"
+ },
+ {
+  "key": "0edd605b1aaf4149d89fe5ca59f99799198b2dbd10b07a06da33245afd8c6f0a",
+  "value": {
+   "tax": 3456,
+   "lines": [
+    {
+     "qty": 8,
+     "item": "CC-IPA",
+     "price": 2400,
+     "amount": 19200,
+     "description": "Isopropyl alcohol 20L"
+    }
+   ],
+   "total": 22656,
+   "subtotal": 19200,
+   "po_number": "PO-2279",
+   "vendor_name": "Coastal Chemicals Ltd",
+   "invoice_date": "2026-11-07",
+   "vendor_gstin": "24AACCC7781R1Z9",
+   "invoice_number": "CCL-24-5550"
+  },
+  "created_at": "2026-11-08T14:14:52.899Z"
+ },
+ {
+  "key": "d29ab5eb1cf9d2ad44209358e4b12dabe1e08d01b42aef389316faaa4a9b00fa",
+  "value": {
+   "tax": 4104,
+   "lines": [
+    {
+     "qty": 600,
+     "item": "KP-BX5",
+     "price": 38,
+     "amount": 22800,
+     "description": "5-ply carton 18x12x12"
+    }
+   ],
+   "total": 26904,
+   "subtotal": 22800,
+   "po_number": "PO-2280",
+   "vendor_name": "Kaveri Packaging Co",
+   "invoice_date": "2026-11-08",
+   "vendor_gstin": "33AAKCK2210P1Z2",
+   "invoice_number": "KPC-0417"
+  },
+  "created_at": "2026-11-08T14:16:17.538Z"
+ },
+ {
+  "key": "24d64b9c75eb22be7aa88e83bd3a227141fa42d72cd831904f6c660dac4cbc3c",
+  "value": {
+   "tax": 15022.8,
+   "lines": [
+    {
+     "qty": 107,
+     "item": "CC-DGR",
+     "price": 780,
+     "amount": 83460,
+     "description": "Degreaser 5L"
+    }
+   ],
+   "total": 98482.8,
+   "subtotal": 83460,
+   "po_number": "PO-2281",
+   "vendor_name": "Coastal Chemicals Ltd",
+   "invoice_date": "2026-11-08",
+   "vendor_gstin": "24AACCC7781R1Z9",
+   "invoice_number": "CCL-24-5562"
+  },
+  "created_at": "2026-11-08T14:16:20.484Z"
+ },
+ {
+  "key": "3ed79b406b1a7cf300b246aac9634a377738bf5390eae609e6e2244078129784",
+  "value": {
+   "tax": 2268,
+   "lines": [
+    {
+     "qty": 30,
+     "item": "HS-BLT12",
+     "price": 420,
+     "amount": 12600,
+     "description": "Hex bolt M12 (box)"
+    }
+   ],
+   "total": 14868,
+   "subtotal": 12600,
+   "po_number": "PO-2282",
+   "vendor_name": "HALDENWERK STEEL SUPPLIES PVT LTD",
+   "invoice_date": "2026-11-08",
+   "vendor_gstin": "29AAHCH4471K1Z5",
+   "invoice_number": "HSS-INV-3407"
+  },
+  "created_at": "2026-11-08T14:16:24.292Z"
+ },
+ {
+  "key": "ee8948569a3ceb2bd813c59fc2b868f3a83fac4a1377435f15da4a5800ebfe14",
+  "value": {
+   "tax": 4536,
+   "lines": [
+    {
+     "qty": 80,
+     "item": "BL-MCB",
+     "price": 315,
+     "amount": 25200,
+     "description": "MCB 32A"
+    }
+   ],
+   "total": 29736,
+   "subtotal": 25200,
+   "po_number": "PO-2268",
+   "vendor_name": "BRIGHTLINE ELECTRICALS LLP",
+   "invoice_date": "2026-11-07",
+   "vendor_gstin": "07AAJFB5532M1Z1",
+   "invoice_number": "BLE/1102"
+  },
+  "created_at": "2026-11-08T14:17:24.672Z"
+ },
+ {
+  "key": "23ec6e8c6252bc812fc605213f4efd298b58707ad26ca4c66f15064be7b06fa3",
+  "value": {
+   "tax": 5616,
+   "lines": [
+    {
+     "qty": 40,
+     "item": "CC-DGR",
+     "price": 780,
+     "amount": 31200,
+     "description": "Degreaser 5L"
+    }
+   ],
+   "total": 36816,
+   "subtotal": 31200,
+   "po_number": "PO-2275",
+   "vendor_name": "Coastal Chemicals Ltd",
+   "invoice_date": "2026-11-07",
+   "vendor_gstin": "24AACCC7781R1Z9",
+   "invoice_number": "CCL-24-5601"
+  },
+  "created_at": "2026-11-08T14:17:28.607Z"
+ },
+ {
+  "key": "e292929b3678d27b6f2e70fe13d413098e2f5275a57910a1280bf70446f0ec32",
+  "value": {
+   "tax": 1987.2,
+   "lines": [
+    {
+     "qty": 40,
+     "item": "SO-A4",
+     "price": 276,
+     "amount": 11040,
+     "description": "A4 paper ream"
+    }
+   ],
+   "total": 13027.2,
+   "subtotal": 11040,
+   "po_number": "PO-2272",
+   "vendor_name": "Saffron Office Supplies - Mumbai",
+   "invoice_date": "2026-11-07",
+   "vendor_gstin": "27AASFS9921Q1Z8",
+   "invoice_number": "SOS/26-27/1290"
+  },
+  "created_at": "2026-11-08T14:17:30.822Z"
+ },
+ {
+  "key": "1c171d85241c904f5bca42c031f46c4d08feaf42a2ed9db4fabe880aee75657e",
+  "value": {
+   "tax": 3420,
+   "lines": [
+    {
+     "qty": 500,
+     "item": "KP-BX5",
+     "price": 38,
+     "amount": 19000,
+     "description": "5-ply carton 18x12x12"
+    }
+   ],
+   "total": 22420,
+   "subtotal": 19000,
+   "po_number": "PO-2399",
+   "vendor_name": "Kaveri Packaging Co",
+   "invoice_date": "2026-11-07",
+   "vendor_gstin": "33AAKCK2210P1Z2",
+   "invoice_number": "KPC-0455"
+  },
+  "created_at": "2026-11-08T14:17:33.711Z"
+ },
+ {
+  "key": "94d4d2963c4f416c581ed4749a64d32519c0b1576db2e325ed0a710f15dc0f4d",
+  "value": {
+   "tax": 4392,
+   "lines": [
+    {
+     "qty": 25,
+     "item": "HS-AN40",
+     "price": 640,
+     "amount": 16000,
+     "description": "Angle 40x40x5"
+    },
+    {
+     "qty": 20,
+     "item": "HS-BLT12",
+     "price": 420,
+     "amount": 8400,
+     "description": "Hex bolt M12 (box)"
+    }
+   ],
+   "total": 28792,
+   "subtotal": 24400,
+   "po_number": "PO-2276",
+   "vendor_name": "HALDENWERK STEEL SUPPLIES PVT LTD",
+   "invoice_date": "2026-11-07",
+   "vendor_gstin": "29AAHCH4471K1Z5",
+   "invoice_number": "HSS-INV-3460"
+  },
+  "created_at": "2026-11-08T14:17:36.530Z"
+ },
+ {
+  "key": "061ad33091110a62e9273222aa147e0f10c91440e112a8249939251d043e619e",
+  "value": {
+   "tax": 4492.8,
+   "lines": [
+    {
+     "qty": 32,
+     "item": "CC-DGR",
+     "price": 780,
+     "amount": 24960,
+     "description": "Degreaser 5L"
+    }
+   ],
+   "total": 29452.8,
+   "subtotal": 24960,
+   "po_number": "PO-2264",
+   "vendor_name": "Coastal Chemicals Ltd",
+   "invoice_date": "2026-11-07",
+   "vendor_gstin": "24AACCC7781R1Z9",
+   "invoice_number": "CCL-24-5606"
+  },
+  "created_at": "2026-11-08T14:17:38.662Z"
+ }
+]
